@@ -7,6 +7,9 @@ export class Acesso {
     id_acesso: number
 
     @Column()
-    Descricao: string
+    pass: string
+
+    @Column()
+    descricao: string
 
 }
