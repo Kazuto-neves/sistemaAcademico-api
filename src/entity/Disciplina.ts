@@ -1,12 +1,13 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
-export class Disciplina{
+export class Disciplina {
 
-@PrimaryGeneratedColumn()
-id_discplina:number;
-@Column()
-Nome_Dsicplina:string;
+    @PrimaryGeneratedColumn()
+    id_disciplina: number;
+
+    @Column()
+    Nome_Disciplina: string;
 
 
 }

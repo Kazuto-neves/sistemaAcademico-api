@@ -1,15 +1,18 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 @Entity()
-export class Entrar{
+export class Entrar {
 
-@PrimaryGeneratedColumn()
-id_acesso:number;
-@Column()
-senha:string;
-@Column()
-descricao:string;
-@Column()
-tipo:boolean;
+    @PrimaryGeneratedColumn()
+    id_acesso: number;
+
+    @Column()
+    senha: string;
+
+    @Column()
+    descricao: string;
+    
+    @Column()
+    tipo: boolean;
 
 
 

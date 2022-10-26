@@ -1,4 +1,4 @@
-import {Entity,Column,PrimaryGeneratedColumn,OneToOne,JoinColumn, OneToMany,} from "typeorm"
+/*import {Entity,Column,PrimaryGeneratedColumn,OneToOne,JoinColumn, OneToMany,} from "typeorm"
 import { Acesso } from "./Acesso"
 
 @Entity()
@@ -21,4 +21,4 @@ export class Pessoa {
 
     @OneToMany(() => Acesso,(acesso) => acesso.id_acesso)
     acessos: Acesso[]
-}
+}*/
