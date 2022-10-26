@@ -2,22 +2,22 @@ import {Entity,Column,PrimaryGeneratedColumn,OneToOne,JoinColumn, OneToMany,} fr
 //import { Pessoa } from "./Pessoa";
 import { Entrar } from "./Entrar";
 
-@Entity()
+@Entity('professores')
 export class Professor {
 
     @PrimaryGeneratedColumn()
     id_Professor: number
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     nome: string
 
-    @Column("date")
+    @Column({type:"date"})
     data_Nasc: Date
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     email: string
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     senha: string
 
     @OneToOne(() => Entrar)

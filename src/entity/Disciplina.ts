@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
-@Entity()
+@Entity('diciplinas')
 export class Disciplina {
 
     @PrimaryGeneratedColumn()
     id_disciplina: number;
 
-    @Column()
+    @Column({type:"varchar",length:80})
     Nome_Disciplina: string;
 
 

@@ -1,17 +1,14 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
-@Entity()
+@Entity("acessos")
 export class Entrar {
 
     @PrimaryGeneratedColumn()
     id_acesso: number;
 
-    @Column()
+    @Column({type:"varchar",length:60})
     senha: string;
 
-    @Column()
-    descricao: string;
-    
-    @Column()
+    @Column({type:"tinyint"})
     tipo: boolean;
 
 

@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, Double } from "typeorm"
 import { Aluno } from "./Aluno";
-import { Lista_materias } from "./Lista_materias";
+import { Lista_materia } from "./Lista_materia";
 import { Professor } from "./Professor";
 
-@Entity()
+@Entity("boletins")
 export class Boletim {
     @PrimaryGeneratedColumn()
     id_boletim: number;
@@ -14,16 +14,16 @@ export class Boletim {
     @ManyToOne(type => Professor, professor => professor.id_Professor)
     professor: Professor;
 
-    @OneToOne(type => Lista_materias) @JoinColumn()
-    materias: Lista_materias;
+    @OneToOne(type => Lista_materia) @JoinColumn()
+    materias: Lista_materia;
 
-    @Column("decimal",{precision:2})
+    @Column({type:"decimal",precision:2})
     nota1: Double;
 
-    @Column("decimal",{precision:2})
+    @Column({type:"decimal",precision:2})
     nota2: Double;
 
-    @Column("decimal",{precision:2,nullable:true})
+    @Column({type:"decimal",precision:2,nullable:true})
     nota3: Double;
 
 }

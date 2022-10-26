@@ -1,10 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from "typeorm"
 import { Aluno } from "./Aluno";
 import { Disciplina } from "./Disciplina";
-import { Entrar } from "./Entrar";
 import { Professor } from "./Professor";
 
-@Entity()
+@Entity('lista_alunos')
 export class Lista_aluno {
 
     @PrimaryGeneratedColumn()

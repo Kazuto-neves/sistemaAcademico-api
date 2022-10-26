@@ -1,9 +1,10 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne,OneToMany} from "typeorm"
 //import { Pessoa } from "./Pessoa"
-import { Lista_materias } from "./Lista_materias";
+import { Lista_materia } from "./Lista_materia";
 import { Entrar } from "./Entrar";
+import { type } from "os";
 
-@Entity()
+@Entity('alunos')
 export class Aluno {
 
     @PrimaryGeneratedColumn()
@@ -12,21 +13,21 @@ export class Aluno {
     /*@OneToMany(() => Pessoa,(pessoa) => pessoa.id_Pessoa)
     pessoas: Pessoa[]*/
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     nome: string
 
-    @Column("date")
+    @Column({type:"date"})
     data_Nasc: Date
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     email: string
 
-    @Column("varchar",{length:60})
+    @Column({type:"varchar",length:60})
     senha: string
 
-    @OneToMany(() => Lista_materias,(materia) => materia.id_materia)
-    Materias: Lista_materias[]
+    @OneToMany(() => Lista_materia,(materia) => materia.id_materia)
+    Materias: Lista_materia[]
 
-    @OneToOne(() => Entrar)
+    @OneToOne(() => Entrar) @JoinColumn()
     entrar: Entrar
 }
