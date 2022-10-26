@@ -8,7 +8,7 @@ export class Entrar {
     @Column({ type: "varchar", length: 60 })
     senha: string;
 
-    @Column({ type: "tinyint" })
+    @Column({ type: "boolean" })
     tipo: boolean;
 
 

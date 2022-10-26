@@ -1,11 +1,11 @@
 import { AppDataSource } from "./data-source"
-import { User } from "./entity/Acesso"
+import { Entrar } from "./entity/Entrar"
 
 AppDataSource.initialize().then(async () => {
 
     console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.nome = "Timber"
+    const acesso = new Entrar()
+    /*user.nome = "Timber"
     user.email = "Timer@gmail.com"
     user.pass = "saw48"
     user.id_acesso = 2
@@ -16,6 +16,10 @@ AppDataSource.initialize().then(async () => {
     const users = await AppDataSource.manager.find(User)
     console.log("Loaded users: ", users)
 
-    console.log("Here you can setup and run express / fastify / any other framework.")
+    console.log("Here you can setup and run express / fastify / any other framework.")*/
 
 }).catch(error => console.log(error))
+
+
+"Tive uma ideia"
+"Se agente usar o data source pra gerenciar"

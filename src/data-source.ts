@@ -1,6 +1,12 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/Acesso"
+import { Entrar } from "./entity/Entrar";
+import { Lista_materia } from "./entity/Lista_materia";
+import { Professor } from "./entity/Professor";
+import { Lista_aluno } from "./entity/Lista_aluno";
+import { Disciplina } from "./entity/Disciplina";
+import { Boletim } from "./entity/Boletim";
+import { Aluno } from "./entity/Aluno";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -11,7 +17,7 @@ export const AppDataSource = new DataSource({
     database: "Faeterj-Petropolis",
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: [Entrar,Lista_materia,Professor,Lista_aluno,Disciplina,Boletim,Aluno],
     migrations: [],
     subscribers: [],
 })
