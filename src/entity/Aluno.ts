@@ -1,8 +1,7 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne,OneToMany} from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, OneToMany} from "typeorm"
 //import { Pessoa } from "./Pessoa"
 import { Lista_materia } from "./Lista_materia";
 import { Entrar } from "./Entrar";
-import { type } from "os";
 
 @Entity('alunos')
 export class Aluno {
@@ -19,7 +18,7 @@ export class Aluno {
     @Column({type:"date"})
     data_Nasc: Date
 
-    @Column({type:"varchar",length:60})
+    @Column({ type: "varchar", length: 60 })
     email: string
 
     @Column({type:"varchar",length:60})

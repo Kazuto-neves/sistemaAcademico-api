@@ -17,13 +17,13 @@ export class Boletim {
     @OneToOne(type => Lista_materia) @JoinColumn()
     materias: Lista_materia;
 
-    @Column({type:"decimal",precision:2})
+    @Column({ type: "decimal", precision: 2 })
     nota1: Double;
 
-    @Column({type:"decimal",precision:2})
+    @Column({ type: "decimal", precision: 2 })
     nota2: Double;
 
-    @Column({type:"decimal",precision:2,nullable:true})
+    @Column({ type: "decimal", precision: 2, nullable: true })
     nota3: Double;
 
 }
