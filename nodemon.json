@@ -1,0 +1,8 @@
+{
+    "env":{
+        "PGDATABASE": "ecommerce",
+        "PGUSER": "postgres",
+        "PGPASSWORD": "mysenha",
+        "PGPORT":"3310"
+    }
+}

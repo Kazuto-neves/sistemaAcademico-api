@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Faeterj-Petropolis",
+            "database": "Faeterj-Petropolis",
+            "username": "postgres",
+            "password": "123456"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
-import {Router} from 'express';
-
-const ROUTER = Router();
+const EXPRESS = require('express');
+const ROUTER = EXPRESS.Router();
+const POSTGRES = require('../postgres').pool;
 
 //Retorna todos os Produtos
 ROUTER.get('/', (req, res, next) => {
@@ -22,8 +22,8 @@ ROUTER.post('/', (req, res, next) => {
 });
 
 //Retorna os dados um produto
-ROUTER.get('/:id', (req, res, next) => {
-    const ID = req.params.id;
+ROUTER.get('/:id_produto', (req, res, next) => {
+    const ID = req.params.id_produto;
     res.status(200).send({
         msg: "Detalhes do produto",
         id: ID
@@ -43,3 +43,5 @@ ROUTER.delete('/', (req, res, next) => {
         msg: 'produto excluido'
     });
 });
+
+module.exports = ROUTER;

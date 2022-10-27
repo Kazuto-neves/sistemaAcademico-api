@@ -1,26 +1,36 @@
 {
-   "name": "sistemaAcademico-api",
-   "version": "0.0.1",
-   "description": "Awesome project developed with TypeORM.",
-   "type": "commonjs",
-   "devDependencies": {
-      "@types/express": "^4.17.14",
-      "@types/node": "^16.11.10",
-      "nodemon": "^2.0.20",
-      "ts-node": "10.7.0",
-      "typescript": "4.5.2"
-   },
-   "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.18.2",
-      "morgan": "^1.10.0",
-      "pg": "^8.4.0",
-      "reflect-metadata": "^0.1.13",
-      "typeorm": "0.3.10"
-   },
-   "scripts": {
-      "dev": "nodemon --exec ts-node src/server.ts",
-      "start": "ts-node src/server.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
-   }
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "Teste de REST API para tutorial do youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kazuto-neves/NodeAPI.git"
+  },
+  "keywords": [
+    "node",
+    "tutorial",
+    "youtube",
+    "aluno"
+  ],
+  "author": "Christian das Neves Moreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kazuto-neves/NodeAPI/issues"
+  },
+  "homepage": "https://github.com/Kazuto-neves/NodeAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "pg-pool": "^3.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
