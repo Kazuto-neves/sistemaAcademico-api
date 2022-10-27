@@ -4,7 +4,7 @@ const MORGAN = require('morgan');
 const BODYPARSER = require('body-parser')
 
 
-const RPRODUTOS = require('./routes/produtos');
+const RDISCIPLINAS = require('./routes/disciplinas');
 const RPEDIDOS = require('./routes/pedidos');
 
 APP.use(MORGAN('dev'));
@@ -26,7 +26,7 @@ APP.use((req, res, next) => {
     next();
 });
 
-APP.use('/produtos', RPRODUTOS);
+APP.use('/produtos', RDISCIPLINAS);
 APP.use('/pedidos', RPEDIDOS);
 
 //Quando não encontrado rota,entra aqui:
