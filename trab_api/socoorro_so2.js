@@ -7,7 +7,7 @@ app.listen(PORT);
 const con=mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'sua senha',
+    password:'faeterj',
     database:'faeterjdb'
 
 });
@@ -32,7 +32,7 @@ app.post('/post-aluno',(req,res)=>{
     const email  = req.body.email;
     const senha  = req.body.senha;
 
-    con.query('insert into Aluno values(?,?,?,?,?)', [id_aluno,nome,data_nascimento,email,senha],(err,result)=>
+    con.query('insert into alunos values(?,?,?,?,?)', [id_aluno,nome,data_nascimento,email,senha],(err,result)=>
     {if(err){
         console.log(err);
     }
@@ -44,7 +44,7 @@ app.post('/post-aluno',(req,res)=>{
  } );
 app.get("/get-aluno",(req,res)=>{
 
-    con.query("select * from Aluno",function(err,result,fields){
+    con.query("select * from alunos",function(err,result,fields){
         if(err){
                 console.log(err)
         }else{
@@ -59,7 +59,7 @@ app.get("/get-aluno",(req,res)=>{
 
 app.get("/get-aluno/:id",(req,res)=>{
     const id_a=req.params.id;
-    con.query("select * from Aluno where id_aluno=?" ,id_a,(err,result)=>{
+    con.query("select * from alunos where id_aluno=?" ,id_a,(err,result)=>{
         if(err){
                 console.log(err)
         }else{
@@ -78,7 +78,7 @@ app.put("/update-aluno/:id",(req,res)=>
     const email  = req.body.email;
     const senha  = req.body.senha;
 
-    con.query("UPDATE Aluno set nome=?,data_nascimento=?,email=?,senha=? WHERE id_aluno=?", [nome,data_nascimento,email,senha,id_at],(err,result)=>
+    con.query("UPDATE alunos set nome=?,data_nascimento=?,email=?,senha=? WHERE id_aluno=?", [nome,data_nascimento,email,senha,id_at],(err,result)=>
     {
     if(err){
         console.log(err);
@@ -92,7 +92,7 @@ app.put("/update-aluno/:id",(req,res)=>
 
 app.delete("/excluir-aluno/:id",(req,res)=>{
     const id_a=req.params.id;
-    con.query("delete from Aluno where id_aluno=?" ,id_a,(err,result)=>{
+    con.query("delete from alunos where id_aluno=?" ,id_a,(err,result)=>{
         if(err){
                 console.log(err)
         }else{
