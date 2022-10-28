@@ -1,6 +1,5 @@
 const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
-const POSTGRES = require('../postgres').pool;
 
 //Retorna todos os Produtos
 ROUTER.get('/', (req, res, next) => {

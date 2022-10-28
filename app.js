@@ -3,13 +3,13 @@ const APP = EXPRESS();
 const MORGAN = require('morgan');
 const BODYPARSER = require('body-parser')
 
-
 const RDISCIPLINAS = require('./routes/disciplinas');
-const RPEDIDOS = require('./routes/pedidos');
+const RALUNOS = require('./routes/alunos');
 
 APP.use(MORGAN('dev'));
 APP.use(BODYPARSER.urlencoded({ extended: false })) //apenas dados simples
 APP.use(BODYPARSER.json()); //json de entrada no body
+APP.use(EXPRESS.json()); //dois json qual deixa
 
 APP.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -27,7 +27,7 @@ APP.use((req, res, next) => {
 });
 
 APP.use('/produtos', RDISCIPLINAS);
-APP.use('/pedidos', RPEDIDOS);
+APP.use('/alunos', RALUNOS);
 
 //Quando não encontrado rota,entra aqui:
 APP.use((req, res, next) => {
