@@ -1,49 +1,33 @@
 const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
+const CONN = require('../config/configDB');
 
-//Retorna todos os Produtos
-ROUTER.get('/', (req, res, next) => {
-    const DISCIPLINA = {
-        id: r
+ROUTER.post('/inserir', (req, res) => {
+    const id_disciplina = req.body.id_disciplina;
+    const nome = req.body.nome;
+    const id_professor = req.body.id_professor;
+    const ativo = req.body.ativo;
+    CONN.query('insert into disciplinas values(?,?,?,?)', [id_disciplina, nome, id_professor, ativo], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send("inseriu!!!!!!");
+        }
     }
-    res.status(200).send({
-        msg: 'retorna produtos'
-    });
-});
 
-//Insrir um produto
-ROUTER.post('/', (req, res, next) => {
-    const PRODUTO = {
-        nome: req.body.nome,
-        preco: req.body.preco
-    };
-    res.status(201).send({
-        msg: 'insere produto',
-        produtoCriado: PRODUTO
-    });
+    );
 });
+ROUTER.get("/consultar", (req, res) => {
 
-//Retorna os dados um produto
-ROUTER.get('/:id_produto', (req, res, next) => {
-    const ID = req.params.id_produto;
-    res.status(200).send({
-        msg: "Detalhes do produto",
-        id: ID
-    });
-});
-
-//Altera um campo de produtos
-ROUTER.patch('/', (req, res, next) => {
-    res.status(201).send({
-        msg: 'produto alterado'
-    });
-});
-
-//Exclui um produto
-ROUTER.delete('/', (req, res, next) => {
-    res.status(201).send({
-        msg: 'produto excluido'
-    });
-});
+    CONN.query("select * from disciplinas", function (err, result, fields) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result);
+            console.log("tudos as disciplina ai meu chapa");
+        }
+    })
+})
 
 module.exports = ROUTER;

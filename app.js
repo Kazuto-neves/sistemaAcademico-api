@@ -1,10 +1,11 @@
 const EXPRESS = require('express');
 const APP = EXPRESS();
 const MORGAN = require('morgan');
-const BODYPARSER = require('body-parser')
+const BODYPARSER = require('body-parser');
 
 const RDISCIPLINAS = require('./routes/disciplinas');
 const RALUNOS = require('./routes/alunos');
+const RPROFESSORES = require('./routes/professores');
 
 APP.use(MORGAN('dev'));
 APP.use(BODYPARSER.urlencoded({ extended: false })) //apenas dados simples
@@ -26,8 +27,9 @@ APP.use((req, res, next) => {
     next();
 });
 
-APP.use('/produtos', RDISCIPLINAS);
+APP.use('/disciplinas', RDISCIPLINAS);
 APP.use('/alunos', RALUNOS);
+APP.use('/professores', RPROFESSORES);
 
 //Quando não encontrado rota,entra aqui:
 APP.use((req, res, next) => {

@@ -1,6 +1,6 @@
 const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
-const CONN = require('../configDB');
+const CONN = require('../config/configDB');
 
 ROUTER.post('/inserir',(req,res)=>{
     const id_aluno=req.body.id_aluno;
