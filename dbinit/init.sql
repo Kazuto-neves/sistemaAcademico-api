@@ -19,14 +19,12 @@ create table if not exists professores(
     senha varchar(150) not null
 );
 create table if not exists boletins(
-    id_boletin int primary key not null,
-    nota_1 decimal(4, 2) not null,
-    nota_2 decimal(4, 2) not null,
-    nota_3 decimal(4, 2),
+    id_boletim int primary key not null,
+    nota_1 decimal(2, 2) not null,
+    nota_2 decimal(2, 2) not null,
+    nota_3 decimal(2, 2),
     id_aluno int not null,
     id_disciplina int not null,
-    id_professor int not null,
     foreign key (id_aluno) references alunos(id_aluno),
-    foreign key (id_professor) references professores(id_professor),
     foreign key (id_disciplina) references disciplinas(id_disciplina)
 );

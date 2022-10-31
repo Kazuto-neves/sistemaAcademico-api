@@ -7,7 +7,7 @@ ROUTER.post('/inserir', (req, res) => {
     const nome = req.body.nome;
     const id_professor = req.body.id_professor;
     const ativo = req.body.ativo;
-    CONN.query('insert into disciplinas values(?,?,?,?)', [id_disciplina, nome, id_professor, ativo], (err, result) => {
+    CONN.query('insert into disciplinas values(?,?,?,?)', [id_disciplina, nome, ativo,id_professor], (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -30,4 +30,34 @@ ROUTER.get("/consultar", (req, res) => {
     })
 })
 
+ROUTER.get("/consultar/:id",(req,res)=>{
+    const id_a=req.params.id;
+    con.query("select * from disciplinas where id_disciplina=?" ,id_a,(err,result)=>{
+        if(err){
+                console.log(err)
+        }else{
+            res.send(result);
+            console.log("id "+id_a);
+        }
+    })
+});
+
+ROUTER.put("/atualizar/:id",(req,res)=>
+{
+    const id_at=req.params.id;
+    const nome = req.body.nome;
+    const id_professor=req.body.id_professor;
+    const ativo=req.body.ativo;
+
+    con.query("UPDATE disciplinas set nome=?,id_professor=?,ativo=? WHERE id_disciplina=?", [nome,id_professor,ativo,id_at],(err,result)=>
+    {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log(result);
+       res.send("atualizou!!!!!!");
+    }
+})
+});
 module.exports = ROUTER;

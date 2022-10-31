@@ -16,8 +16,33 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: faeterj
       MYSQL_ROOT_PASSWORD: faeterj
-      SERVICE_TAGS: dev
+      SERVICE_TAGS: prod
       SERVICE_NAME: mysqldb
+    networks:
+      - internalnet
+      
+  nodeapp:
+    container_name: nodeappcontainer
+    build: .
+    image: nodeapp:v1
+    volumes:
+      - $HOME/nodeapp:/code
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    environment:
+      DB_HOST:	mysqldb
+      DB_PORT:	3306
+      DB_USE:	'admin'
+      DB_PASSWORD:	'faeterj'
+      DB_NAME:	faeterjdb
+      DB_CONNECTION_LIMIT:	20
+      SERVICE_TAGS: prod
+      SERVICE_NAME: nodeappservice
+      SERVER_PORT:	3000
+    depends_on:
+      - mysqldb
     networks:
       - internalnet
 

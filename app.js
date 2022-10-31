@@ -6,6 +6,7 @@ const BODYPARSER = require('body-parser');
 const RDISCIPLINAS = require('./routes/disciplinas');
 const RALUNOS = require('./routes/alunos');
 const RPROFESSORES = require('./routes/professores');
+const RBOLETINS = require('./routes/boletins');
 
 APP.use(MORGAN('dev'));
 APP.use(BODYPARSER.urlencoded({ extended: false })) //apenas dados simples
@@ -30,6 +31,7 @@ APP.use((req, res, next) => {
 APP.use('/disciplinas', RDISCIPLINAS);
 APP.use('/alunos', RALUNOS);
 APP.use('/professores', RPROFESSORES);
+APP.use('/boletins', RBOLETINS);
 
 //Quando não encontrado rota,entra aqui:
 APP.use((req, res, next) => {

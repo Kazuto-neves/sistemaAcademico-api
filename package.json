@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start:dev": "NODE_ENV=dev nodemon server.js",
+    "start:prod": "NODE_ENV=prod node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
     "youtube",
     "aluno"
   ],
-  "author": "Christian das Neves Moreira",
+  "author": "Christian das Neves Moreira/Emily Saito",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Kazuto-neves/NodeAPI/issues"
