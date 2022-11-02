@@ -12,7 +12,8 @@ ROUTER.post('/inserir', (req, res) => {
             console.log(err);
         }
         else {
-            res.send("inseriu!!!!!!");
+            res.send("id_disciplina: " + id_disciplina + "\nnome: " + nome + "\nativo: " + ativo + "\nid_professor: " + id_professor);
+            console.log(result);
         }
     }
 
@@ -25,7 +26,7 @@ ROUTER.get("/consultar", (req, res) => {
             console.log(err)
         } else {
             res.send(result);
-            console.log("tudos as disciplina ai meu chapa");
+            console.log(result);
         }
     })
 })
@@ -37,7 +38,7 @@ ROUTER.get("/consultar/:id",(req,res)=>{
                 console.log(err)
         }else{
             res.send(result);
-            console.log("id "+id_a);
+            console.log("id_disciplina"+id_a);
         }
     })
 });
@@ -56,7 +57,7 @@ ROUTER.put("/atualizar/:id",(req,res)=>
     }
     else{
         console.log(result);
-       res.send("atualizou!!!!!!");
+        res.send("Atualizado o id " + id_at);
     }
 })
 });

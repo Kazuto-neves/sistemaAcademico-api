@@ -14,7 +14,8 @@ ROUTER.post('/inserir', (req, res) => {
             console.log(err);
         }
         else {
-            res.send("inseriu!!!!!!");
+            res.send("id_professor:"+id_professor+"\nnome:"+nome+"\ndata_nascimento:"+data_nascimento+"\nemail:"+email+"\nsenha:"+senha);
+            console.log(result);
         }
     }
 
@@ -27,7 +28,7 @@ ROUTER.get("/consultar", (req, res) => {
             console.log(err)
         } else {
             res.send(result);
-            console.log("tudos os profs ai meu chapa");
+            console.log(result);
         }
     })
 })
@@ -42,7 +43,7 @@ ROUTER.get("/consultar/:id", (req, res) => {
             console.log(err)
         } else {
             res.send(result);
-            console.log("id " + id_a);
+            console.log("id_professor: "+id_a);
         }
     })
 });
@@ -61,7 +62,7 @@ ROUTER.put("/atualizar/:id", (req, res) => {
         }
         else {
             console.log(result);
-            res.send("atualizou!!!!!!");
+            res.send("Atualizado o id "+id_at);
         }
     })
 });
@@ -73,7 +74,7 @@ ROUTER.delete("/deletar/:id", (req, res) => {
             console.log(err)
         } else {
             res.send(result);
-            console.log("id " + id_a);
+            console.log("Excluido o id "+id_a);
         }
     })
 });
